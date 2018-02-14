@@ -10,9 +10,10 @@ _gentoo_repos_conf() {
 
   secname=();
 
-  for file in /usr/share/portage/config/repos.conf \
-           /etc/portage/repos.conf \
-           /etc/portage/repos.conf/*.conf; do
+
+  for file in @GENTOO_PORTAGE_EPREFIX@/usr/share/portage/config/repos.conf \
+           @GENTOO_PORTAGE_EPREFIX@/etc/portage/repos.conf \
+           @GENTOO_PORTAGE_EPREFIX@/etc/portage/repos.conf/*.conf; do
 
     [[ -f ${file} ]] || continue
     insection=0
